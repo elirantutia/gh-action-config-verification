@@ -1,0 +1,10 @@
+name: 'Config Verification'
+description: ''
+inputs:
+  load-secrets:
+    description: 'Load secrets as well'
+    required: false
+    default: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
