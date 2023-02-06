@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require('fs');
 const config = require("@aura-backend-kit/config");
 
-const configDir = path.resolve(__dirname, "config");
+// const configDir = path.resolve(__dirname, "config");
 const excludeFiles = ["index.js", "schema.js"];
 
 
@@ -24,7 +24,7 @@ async function verify(loadSecrets) {
     for (const env of envs) {
         console.log(`Verifying config of environment ${env}`);
         process.env.NODE_ENV = env;
-        const params = [configDir, "schema", true];
+        const params = ["", "schema", true];
         if (loadSecrets) {
             await config.init(...params);
         } else {
