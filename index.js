@@ -23,7 +23,6 @@ async function verify(loadSecrets) {
         .map((fileName) => fileName.split(".")[0]);
     for (const env of envs) {
         console.log(`Verifying config of environment ${env}`);
-        console.log(`configDir=${configDir}`);
         process.env.NODE_ENV = env;
         const params = [configDir, "schema", true];
         if (loadSecrets) {
